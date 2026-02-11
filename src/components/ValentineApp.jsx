@@ -5,21 +5,12 @@ export default function ValentineApp() {
   const noBtnRef = useRef(null);
 
 const moveNoButton = () => {
-  const button = noBtnRef.current;
-
-  if (button && button.parentElement) {
-    const parent = button.parentElement;
-
-    const width = parent.offsetWidth - button.offsetWidth;
-    const height = parent.offsetHeight - button.offsetHeight;
-
-    const x = Math.random() * width;
-    const y = Math.random() * height;
-
-    button.style.left = `${x}px`;
-    button.style.top = `${y}px`;
-  }
-};
+    const x = Math.random() * 300 - 150;
+    const y = Math.random() * 150 - 75;
+    if (noBtnRef.current) {
+      noBtnRef.current.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  };
 
 
   return (
